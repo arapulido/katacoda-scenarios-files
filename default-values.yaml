@@ -796,10 +796,10 @@ agents:
       #
       create: false
 
-    ## @param securityContext - object - required
-    ## Provide securityContext configuration
-    #
-    securityContext:
+    # agents.podSecurity.seLinuxContext -- Provide seLinuxContext configuration for PSP/SCC
+    # @default -- Must run as spc_t
+    seLinuxContext:
+      rule: MustRunAs
       seLinuxOptions:
         user: system_u
         role: system_r
