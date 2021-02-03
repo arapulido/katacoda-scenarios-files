@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  annotations:
+    ad.datadoghq.com/nginx.check_names: 'nginx'
+    ad.datadoghq.com/nginx.init_configs: '[{}}]'
+    ad.datadoghq.com/nginx.instances: '[{"nginx_status_url": "http://%%host%%:81/nginx_status/"}]'
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: bitnami/nginx:latest
+        name: nginx
+        resources: {}
