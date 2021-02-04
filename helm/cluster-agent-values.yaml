@@ -69,7 +69,7 @@ datadog:
   ## Compared to the rules of GKE, dots are allowed whereas they are not allowed on GKE:
   ## https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.FIELDS.name
   #
-  clusterName:  # <CLUSTER_NAME>
+  clusterName: katacoda
 
   ## @param site - string - optional - default: 'datadoghq.com'
   ## The site of the Datadog intake to send Agent data to.
@@ -102,7 +102,7 @@ datadog:
   ## Autodiscovery via Kube Service annotations is automatically enabled
   #
   clusterChecks:
-    enabled: false
+    enabled: true
 
   ## @param nodeLabelsAsTags - list of key:value strings - optional
   ## Provide a mapping of Kubernetes Node Labels to Datadog Tags.
@@ -245,7 +245,7 @@ datadog:
     ## Enable this to enable APM and tracing, on port 8126
     ## ref: https://github.com/DataDog/docker-dd-agent#tracing-from-the-host
     #
-    enabled: false
+    enabled: true
 
     ## @param port - integer - optional - default: 8126
     ## Override the trace Agent port.
@@ -454,7 +454,7 @@ clusterAgent:
   ## @param enabled - boolean - required
   ## Set this to true to enable Datadog Cluster Agent
   #
-  enabled: false
+  enabled: true
 
   ## @param image - object - required
   ## Define the Datadog Cluster-Agent image to work with.
