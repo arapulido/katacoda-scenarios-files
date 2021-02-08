@@ -42,10 +42,9 @@ metadata:
         [
           {
             "name": "My Nginx Service Endpoints",
-            "nginx_status_url": "http://%%host%%:%%port%%/nginx_status"
+            "nginx_status_url": "http://%%host%%:8080/status/"
           }
-        ]            
-    ad.datadoghq.com/endpoints.logs: '[{"source":"nginx","service":"webapp"}]'
+        ]
 spec:
   ports:
   - port: 80
