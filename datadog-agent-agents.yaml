@@ -1,0 +1,26 @@
+apiVersion: datadoghq.com/v1alpha1
+kind: DatadogAgent
+metadata:
+  name: datadog
+spec:
+  credentials:
+    apiSecret:
+      secretName: datadog-secret
+      keyName: api-key
+  agent:
+    apm:
+      enabled: true
+    process:
+      enabled: true
+    log:
+      enabled: true
+      logsConfigContainerCollectAll: true
+    env:
+      - name: DD_KUBELET_TLS_VERIFY
+        value: "false"
+    image:
+      name: "datadog/agent:latest"
+    config:
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
