@@ -3,6 +3,7 @@ kind: DatadogAgent
 metadata:
   name: datadog
 spec:
+  clusterName: katacoda
   credentials:
     apiSecret:
       secretName: datadog-secret
@@ -29,6 +30,6 @@ spec:
   clusterAgent:
     image:
       name: "datadog/cluster-agent:latest"
-    config:
-      clusterChecksEnabled: true
-    replicas: 1
+  features:
+    orchestratorExplorer:
+      enabled: true

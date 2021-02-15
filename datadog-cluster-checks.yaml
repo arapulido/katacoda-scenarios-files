@@ -17,7 +17,21 @@ spec:
         value: "false"
     image:
       name: "datadog/agent:latest"
+    apm:
+      enabled: true
+    process:
+      enabled: true
+    log:
+      enabled: true
     config:
       tolerations:
         - key: node-role.kubernetes.io/master
           effect: NoSchedule
+  clusterAgent:
+    image:
+      name: "datadog/cluster-agent:latest"
+    config:
+      clusterChecksEnabled: true
+  features:
+    orchestratorExplorer:
+      enabled: true
