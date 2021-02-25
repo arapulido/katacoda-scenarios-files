@@ -16,7 +16,7 @@ spec:
       - name: DD_KUBELET_TLS_VERIFY
         value: "false"
     image:
-      name: "datadog/agent:latest"
+      name: "datadog/agent:7.26.0"
     apm:
       enabled: true
     process:
@@ -29,7 +29,7 @@ spec:
           effect: NoSchedule
   clusterAgent:
     image:
-      name: "datadog/cluster-agent:latest"
+      name: "datadog/cluster-agent:1.11.0"
     config:
       clusterChecksEnabled: true
   features:

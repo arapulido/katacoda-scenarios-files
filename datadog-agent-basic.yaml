@@ -13,4 +13,4 @@ spec:
       keyName: app-key
   agent:
     image:
-      name: "datadog/agent:latest"
+      name: "datadog/agent:7.26.0"

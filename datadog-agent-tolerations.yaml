@@ -13,7 +13,7 @@ spec:
       keyName: app-key
   agent:
     image:
-      name: "datadog/agent:latest"
+      name: "datadog/agent:7.26.0"
     config:
       tolerations:
         - key: node-role.kubernetes.io/master
