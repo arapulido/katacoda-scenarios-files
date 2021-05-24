@@ -19,8 +19,10 @@ spec:
       name: "datadog/agent:7.27.0"
     apm:
       enabled: true
+      hostPort: 8126
     process:
       enabled: true
+      processCollection: true
     log:
       enabled: true
     config:
