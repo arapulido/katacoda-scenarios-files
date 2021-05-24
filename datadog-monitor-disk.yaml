@@ -1,7 +1,7 @@
 apiVersion: datadoghq.com/v1alpha1
 kind: DatadogMonitor
 metadata:
-name: datadog-monitor-test
+  name: disk-usage-nodes
 spec:
   query: ""
   type: "metric alert"
