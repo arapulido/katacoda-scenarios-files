@@ -4,7 +4,6 @@ metadata:
   labels:
     service: advertisements
     app: ecommerce
-    tags.datadoghq.com/env: "ruby-shop"
   name: advertisements 
 spec:
   replicas: 1
@@ -19,7 +18,6 @@ spec:
       labels:
         service: advertisements
         app: ecommerce
-        tags.datadoghq.com/env: "ruby-shop"
     spec:
       containers:
       - image: ddtraining/advertisements-fixed:1.0.0
@@ -45,9 +43,7 @@ spec:
           - name: DD_VERSION
             value: "1.0.0"
           - name: DD_ENV
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.labels['tags.datadoghq.com/env']
+            value: "datadog-monitors-scenario"
           - name: DD_AGENT_HOST 
             valueFrom:
               fieldRef:
