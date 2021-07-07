@@ -1,0 +1,7 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend-canary 
+spec:
+  type: ExternalName
+  externalName: frontend.canary.svc.cluster.local
