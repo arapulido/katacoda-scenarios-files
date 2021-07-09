@@ -43,7 +43,7 @@ spec:
           - name: DD_ENV
             value: "progressive"
           - name: DD_VERSION
-            value: "2.0"
+            value: "1.0"
           - name: DD_SERVICE
             value: "advertisements"
           - name: DD_AGENT_HOST
@@ -59,21 +59,3 @@ spec:
         ports:
         - containerPort: 5002
         resources: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    service: advertisements
-    app: ecommerce
-  name: advertisements
-  namespace: ns2
-spec:
-  ports:
-  - port: 5002
-    protocol: TCP
-    targetPort: 5002
-  selector:
-    service: advertisements
-    app: ecommerce
-status:

@@ -55,7 +55,7 @@ spec:
         #   value: <your_client_token>
         # - name: DD_APPLICATION_ID
         #   value: <your_application_id>
-        image: ddtraining/storefront:latest
+        image: arapulido/frontend:1.0 
         name: ecommerce-spree-observability
         ports:
         - containerPort: 3000
@@ -65,24 +65,3 @@ spec:
             cpu: 100m
             memory: 100Mi
           limits: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    service: frontend
-    app: ecommerce
-  name: frontend
-  namespace: ns2
-spec:
-  ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 3000
-      name: http
-  selector:
-    service: frontend
-    app: ecommerce
-  # Change this value to LoadBalancer for better public ingress routing to this
-  # pod on most k8s platforms.
-  type: NodePort 
