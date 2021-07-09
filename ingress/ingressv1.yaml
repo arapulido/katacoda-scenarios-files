@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: minimal-ingress
+  name: frontend-ingress-v1 
   namespace: ns1
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  -  http:
+  - http:
       paths:
-      - path: /foo
+      - path: /
         pathType: Prefix
         backend:
           service:

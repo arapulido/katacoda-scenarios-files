@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: frontendv2
+    app: ecommerce
+  name: frontendv2
+  namespace: ns1
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+      name: http
+  selector:
+    service: frontendv2
+    app: ecommerce
+  # Change this value to LoadBalancer for better public ingress routing to this
+  # pod on most k8s platforms.
+  type: NodePort 
