@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ads-vs 
+  namespace: ns3
+spec:
+  hosts:
+    - advertisements 
+  http:
+  - route:
+    - destination:
+        host: advertisements 
+        subset: v1
+      weight: 100
+    - destination:
+        host: advertisements 
+        subset: v2
+      weight: 0
