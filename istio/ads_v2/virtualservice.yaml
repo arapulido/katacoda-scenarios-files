@@ -7,12 +7,15 @@ spec:
   hosts:
     - advertisements 
   http:
+  - match:
+    - headers:
+        page-source:
+          exact: "products"
+    route:
+    - destination:
+        host: advertisements 
+        subset: v2
   - route:
     - destination:
         host: advertisements 
         subset: v1
-      weight: 100
-    - destination:
-        host: advertisements 
-        subset: v2
-      weight: 0
