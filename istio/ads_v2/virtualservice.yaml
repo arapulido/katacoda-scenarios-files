@@ -13,9 +13,14 @@ spec:
           exact: "products"
     route:
     - destination:
-        host: advertisements 
+        host: advertisements
+        subset: v1
+      weight: 50
+    - destination:
+        host: advertisements
         subset: v2
+      weight: 50
   - route:
     - destination:
-        host: advertisements 
+        host: advertisements
         subset: v1
