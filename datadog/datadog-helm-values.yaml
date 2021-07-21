@@ -208,12 +208,11 @@ datadog:
   ## Each key becomes a file in /conf.d
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
-  confd: {}
-  #   redisdb.yaml: |-
-  #     init_config:
-  #     instances:
-  #       - host: "name"
-  #         port: "6379"
+  confd:
+    istio.d/istio.yaml: |-
+      init_config:
+      instances:
+        - istiod_endpoint: http://istiod.istio-system:15014/metrics
   #   kubernetes_state.yaml: |-
   #     ad_identifiers:
   #       - kube-state-metrics
