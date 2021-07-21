@@ -209,7 +209,7 @@ datadog:
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   confd:
-    istio.d/istio.yaml: |-
+    istio.yaml: |-
       init_config:
       instances:
         - istiod_endpoint: http://istiod.istio-system:15014/metrics
