@@ -736,10 +736,16 @@ agents:
       #    memory: 200Mi
 
   # agents.volumes -- Specify additional volumes to mount in the dd-agent container
-  volumes: []
+  volumes:
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd
+      name: etcd-keys
 
   # agents.volumeMounts -- Specify additional volumes to mount in the dd-agent container
-  volumeMounts: []
+  volumeMounts:
+    - mountPath: /keys
+      name: etcd-keys
+      readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
