@@ -37,7 +37,7 @@ spec:
           - name: POSTGRES_USER
             value: "user"
           - name: POSTGRES_HOST
-            value: "db.database.svc.cluster.local"
+            value: "db.default.svc.cluster.local"
           - name: DD_AGENT_HOST
             valueFrom:
               fieldRef:
