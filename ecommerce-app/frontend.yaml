@@ -41,10 +41,20 @@ spec:
               fieldPath: status.hostIP
         - name: DD_LOGS_INJECTION
           value: "true"
+        - name: DD_ENV
+          value: "autoscaling-k8s-workshop"
+        - name: DD_VERSION
+          value: "1.0"
+        - name: DD_SERVICE
+          value: "storefront"
         - name: DD_ANALYTICS_ENABLED
           value: "true"
-        image: arapulido/ecommerce-spree-observability:dev
-        imagePullPolicy: Always
+        # Enable RUM
+        # - name: DD_CLIENT_TOKEN
+        #   value: <your_client_token>
+        # - name: DD_APPLICATION_ID
+        #   value: <your_application_id>
+        image: arapulido/frontend:1.0 
         name: ecommerce-spree-observability
         ports:
         - containerPort: 3000
@@ -54,20 +64,3 @@ spec:
             cpu: 100m
             memory: 100Mi
           limits: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    service: frontend
-    app: ecommerce
-  name: frontend
-spec:
-  ports:
-  - port: 3000
-    protocol: TCP
-    nodePort: 30001
-  selector:
-    service: frontend
-    app: ecommerce
-  type: NodePort
