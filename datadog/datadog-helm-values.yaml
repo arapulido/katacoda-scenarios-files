@@ -48,7 +48,7 @@ datadog:
   ## * Must end with a number or a letter.
   ## Compared to the rules of GKE, dots are allowed whereas they are not allowed on GKE:
   ## https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.FIELDS.name
-  clusterName: progressive-delivery
+  clusterName: autoscaling
 
   # datadog.site -- The site of the Datadog intake to send Agent data to
   ## Set to 'datadoghq.eu' to send data to the EU site.
@@ -325,7 +325,7 @@ clusterAgent:
     repository: datadog/cluster-agent
 
     # clusterAgent.image.tag -- Cluster Agent image tag to use
-    tag: 1.11.0
+    tag: 1.12.0
 
     # clusterAgent.image.pullPolicy -- Cluster Agent image pullPolicy
     pullPolicy: IfNotPresent
@@ -523,7 +523,7 @@ agents:
 
     # agents.image.tag -- Define the Agent version to use
     ## Use 7-jmx to enable jmx fetch collection
-    tag: latest 
+    tag: 7.29.0
 
     # agents.image.doNotCheckTag -- Skip the version<>chart compatibility check
     ## By default, the version passed in agents.image.tag is checked
@@ -840,7 +840,7 @@ clusterChecksRunner:
 
     # clusterChecksRunner.image.tag -- Define the Agent version to use
     ## Use 7-jmx to enable jmx fetch collection
-    tag: 7.23.0
+    tag: 7.29.0
 
     # clusterChecksRunner.image.pullPolicy -- Datadog Agent image pull policy
     pullPolicy: IfNotPresent
