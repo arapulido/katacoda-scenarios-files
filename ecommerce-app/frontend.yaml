@@ -54,7 +54,7 @@ spec:
         #   value: <your_client_token>
         # - name: DD_APPLICATION_ID
         #   value: <your_application_id>
-        image: arapulido/frontend:1.0 
+        image: ddtraining/storefront-fixed:2.0.0
         name: ecommerce-spree-observability
         ports:
         - containerPort: 3000
