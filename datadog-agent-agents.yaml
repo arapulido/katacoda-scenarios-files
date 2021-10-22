@@ -26,3 +26,6 @@ spec:
       tolerations:
         - key: node-role.kubernetes.io/master
           effect: NoSchedule
+  clusterAgent:
+    image:
+      name: "datadog/cluster-agent:1.15.0"

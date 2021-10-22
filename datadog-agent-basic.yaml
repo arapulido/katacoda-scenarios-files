@@ -11,6 +11,3 @@ spec:
     appSecret:
       secretName: datadog-secret
       keyName: app-key
-  agent:
-    image:
-      name: "datadog/agent:7.31.0"
