@@ -3,6 +3,7 @@ kind: DatadogAgent
 metadata:
   name: datadog
 spec:
+  clusterName: dash2022
   credentials:
     apiSecret:
       secretName: datadog-secret
@@ -10,6 +11,9 @@ spec:
     appSecret:
       secretName: datadog-secret
       keyName: app-key
+  features:
+    kubeStateMetricsCore:
+      enabled: true
   agent:
     config:
       kubelet:
