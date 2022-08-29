@@ -15,6 +15,7 @@ spec:
   strategy: {}
   template:
     metadata:
+      ad.datadoghq.com/advertisements.logs: '[{"source":"python","service":"advertisements"}]'
       creationTimestamp: null
       labels:
         service: advertisements
@@ -40,7 +41,7 @@ spec:
           - name: POSTGRES_HOST
             value: "db.database.svc.cluster.local"
           - name: DD_ENV
-            value: "progressive"
+            value: "dash2022monitoringk8s"
           - name: DD_VERSION
             value: "1.0"
           - name: DD_SERVICE

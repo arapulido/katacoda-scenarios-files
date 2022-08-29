@@ -15,6 +15,7 @@ spec:
   strategy: {}
   template:
     metadata:
+      ad.datadoghq.com/discounts.logs: '[{"source":"python","service":"discounts"}]'
       creationTimestamp: null
       labels:
         service: discounts
@@ -50,7 +51,7 @@ spec:
           - name: DD_PROFILING_ENABLED
             value: "true"
           - name: DD_ENV
-            value: "progressive"
+            value: "dash2022monitoringk8s"
           - name: DD_VERSION
             value: "1.0"
           - name: DD_SERVICE

@@ -19,6 +19,7 @@ spec:
     type: RollingUpdate
   template:
     metadata:
+      ad.datadoghq.com/storefront.logs: '[{"source":"ruby","service":"storefront"}]'
       labels:
         service: frontend
         app: ecommerce
@@ -43,7 +44,7 @@ spec:
         - name: DD_LOGS_INJECTION
           value: "true"
         - name: DD_ENV
-          value: "progressive"
+          value: "dash2022monitoringk8s"
         - name: DD_VERSION
           value: "1.0"
         - name: DD_SERVICE
@@ -56,7 +57,7 @@ spec:
         # - name: DD_APPLICATION_ID
         #   value: <your_application_id>
         image: arapulido/frontend:1.0 
-        name: ecommerce-spree-observability
+        name: storefront
         ports:
         - containerPort: 3000
           protocol: TCP
