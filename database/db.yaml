@@ -58,6 +58,8 @@ spec:
   strategy: {}
   template:
     metadata:
+      annotations:
+        ad.datadoghq.com/postgres.logs: '[{"source":"postgresql","service":"postgres"}]'
       labels:
         service: db
         app: ecommerce
