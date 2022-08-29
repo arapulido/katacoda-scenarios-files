@@ -15,7 +15,8 @@ spec:
   strategy: {}
   template:
     metadata:
-      ad.datadoghq.com/discounts.logs: '[{"source":"python","service":"discounts"}]'
+      annotations:
+        ad.datadoghq.com/discounts.logs: '[{"source":"python","service":"discounts"}]'
       creationTimestamp: null
       labels:
         service: discounts

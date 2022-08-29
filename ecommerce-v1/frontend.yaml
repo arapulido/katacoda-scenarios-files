@@ -19,7 +19,8 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      ad.datadoghq.com/storefront.logs: '[{"source":"ruby","service":"storefront"}]'
+      annotations:
+        ad.datadoghq.com/storefront.logs: '[{"source":"ruby","service":"storefront"}]'
       labels:
         service: frontend
         app: ecommerce
