@@ -27,6 +27,10 @@ spec:
         name: advertisements
         command: ["ddtrace-run"]
         args: ["flask", "run", "--port=5002", "--host=0.0.0.0"]
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "500Mi"
         env:
           - name: FLASK_APP
             value: "ads.py"
@@ -59,4 +63,3 @@ spec:
             value: "true"
         ports:
         - containerPort: 5002
-        resources: {}
