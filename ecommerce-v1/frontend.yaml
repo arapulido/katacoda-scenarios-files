@@ -52,6 +52,14 @@ spec:
           value: "storefront"
         - name: DD_ANALYTICS_ENABLED
           value: "true"
+        - name: DISCOUNTS_ROUTE
+          value: "http://discounts"
+        - name: DISCOUNTS_PORT
+          value: "5001"
+        - name: ADS_ROUTE
+          value: "http://advertisements"
+        - name: ADS_PORT
+          value: "5002"
         # Enable RUM
         # - name: DD_CLIENT_TOKEN
         #   value: <your_client_token>
