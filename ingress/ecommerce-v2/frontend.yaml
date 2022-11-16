@@ -48,6 +48,14 @@ spec:
           value: "2.0"
         - name: DD_SERVICE
           value: "storefront"
+        - name: DISCOUNTS_ROUTE
+          value: "http://discounts"
+        - name: DISCOUNTS_PORT
+          value: "5001"
+        - name: ADS_ROUTE
+          value: "http://advertisements"
+        - name: ADS_PORT
+          value: "5002"
         - name: DD_ANALYTICS_ENABLED
           value: "true"
         # Enable RUM
